@@ -3,21 +3,281 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>famous places in japan</title>
+  <title>Discover Japan - Famous Places & Cultural Experiences</title>
   <link rel="icon" href="icon3.webp"> 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #bc002d;
+      --secondary-color: #f7f3e8;
+      --accent-color: #2d5c7f;
+      --dark-color: #333333;
+      --light-color: #ffffff;
+    }
+    
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--dark-color);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--light-color);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+    
+    #logo {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+    
+    #logo:hover {
+      transform: scale(1.05);
+    }
+    
+    #aclogo {
+      height: 40px;
+      border-radius: 50%;
+    }
+    
+    nav ul li a {
+      font-weight: 500;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+      color: var(--primary-color) !important;
+      background-color: var(--secondary-color);
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      color: var(--light-color);
+      padding: 120px 0;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .hero-section h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      padding: 10px 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: #a00024;
+      border-color: #a00024;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Carousel Section */
+    .carousel-section {
+      background-color: var(--secondary-color);
+      padding: 60px 0;
+      margin-bottom: 50px;
+    }
+    
+    .carousel-item {
+      padding: 20px 0;
+    }
+    
+    .carousel-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    
+    .carousel-section p {
+      color: var(--dark-color);
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+    }
+    
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      padding: 15px;
+    }
+    
+    /* Blog Posts Section */
+    .blog-posts {
+      padding: 60px 0;
+    }
+    
+    .blog-posts h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--primary-color);
+      position: relative;
+    }
+    
+    .blog-posts h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary-color);
+      margin: 15px auto;
+    }
+    
+    .blog-post {
+      background: var(--light-color);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+    
+    .blog-post:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .blog-post img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .blog-post:hover img {
+      transform: scale(1.05);
+    }
+    
+    .blog-post .content {
+      padding: 20px;
+    }
+    
+    .blog-post h3 {
+      color: var(--accent-color);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+    
+    .blog-post p {
+      color: var(--dark-color);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      padding: 50px 0 20px;
+    }
+    
+    footer h5 {
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+    }
+    
+    footer ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    footer ul li {
+      margin-bottom: 10px;
+    }
+    
+    footer ul li a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer ul li a:hover {
+      color: var(--secondary-color);
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      margin-right: 15px;
+      color: var(--light-color);
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: var(--primary-color);
+    }
+    
+    .copyright {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      margin-top: 30px;
+      text-align: center;
+      color: #aaaaaa;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-section {
+        padding: 80px 0;
+      }
+      
+      .carousel-section .row > div {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container d-flex justify-content-between align-items-center">
       <div id="logo1">
-        <img src="logo2.png" alt="japan logo" id="logo">
+        <img src="logo2.png" alt="Japan Tourism Logo" id="logo">
       </div>
       <nav>
         <ul class="list-unstyled list-inline mb-0">
-          <li class="list-inline-item"><a href="http://127.0.0.1:5500/shashank/shashank/index.html#" style="color:black">Home |</a></li>
-          <li class="list-inline-item"><a href="http://127.0.0.1:5500/index1.html" style="color:black">japan places|</a></li>
+          <li class="list-inline-item"><a href="http://127.0.0.1:5500/shashank/shashank/index.html#" style="color:black">Home</a></li>
+          <li class="list-inline-item"><span style="color: #ccc">|</span></li>
+          <li class="list-inline-item"><a href="http://127.0.0.1:5500/index1.html" style="color:black">Japan Places</a></li>
+          <li class="list-inline-item"><span style="color: #ccc">|</span></li>
           <li class="list-inline-item"><a href="#" style="color:black">About</a></li>
         </ul>
       </nav>
@@ -25,45 +285,35 @@
         <img src="logo3.jpg" alt="Account Logo" id="aclogo">
       </div>
     </div>
-    
   </header>
   
-<section id="s1">
-<section id="impyg">
-      <h1 class="Article_article__header__title__NStJe">famous places in japan</h1>
-      <div class="Article_article__header__excerpt__14XzW">
-     
-      </div>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Discover the Beauty of Japan</h1>
+      <p>Explore ancient traditions, breathtaking landscapes, and culinary delights in the Land of the Rising Sun</p>
+      <a href="#blog-posts" class="btn btn-primary">Explore Destinations</a>
+    </div>
   </section>
-  <section id="s2">
-
-</section>
-</section>
-
   
   <!-- Carousel Section -->
-<section class="carousel-section">
+  <section class="carousel-section">
     <div id="benefitsCarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-
-                <h2>Rich cultural heritage blending tradition and modernity.</h2>
-                <p>Japan's rich cultural heritage seamlessly integrates centuries-old traditions with cutting-edge modernity, offering visitors a captivating juxtaposition of ancient rituals like tea ceremonies and vibrant contemporary trends like manga and technology. This blend is evident in every aspect of Japanese life, from architecture and art to cuisine and entertainment, creating a unique and dynamic cultural tapestry that enchants and inspires visitors from around the world.</p>
+                <h2>Rich Cultural Heritage</h2>
+                <p>Japan's rich cultural heritage seamlessly integrates centuries-old traditions with cutting-edge modernity, offering visitors a captivating juxtaposition of ancient rituals like tea ceremonies and vibrant contemporary trends like manga and technology. This blend is evident in every aspect of Japanese life, from architecture and art to cuisine and entertainment.</p>
               </div>
               <div class="col-md-4">
-                <h2>Scenic landscapes from cherry blossoms to majestic mountains.</h2>
-                <p>Japan's scenic landscapes paint a mesmerizing picture, from the ethereal beauty of cherry blossoms in spring to the majestic allure of its towering mountains. Each season unveils a new spectacle, whether it's the vibrant hues of autumn foliage or the tranquil serenity of snow-capped peaks. From the iconic cherry blossom festivals to the rugged beauty of Mount Fuji, Japan's diverse terrain offers breathtaking vistas and opportunities for outdoor adventure, captivating visitors with its natural wonders and timeless charm..</p>
+                <h2>Scenic Landscapes</h2>
+                <p>Japan's scenic landscapes paint a mesmerizing picture, from the ethereal beauty of cherry blossoms in spring to the majestic allure of its towering mountains. Each season unveils a new spectacle, whether it's the vibrant hues of autumn foliage or the tranquil serenity of snow-capped peaks.</p>
               </div>
               <div class="col-md-4">
-                <h2>Culinary delights ranging from sushi to ramen.</h2>
-                <p> Japan's culinary scene is a tantalizing journey through diverse flavors and textures, featuring iconic dishes like sushi and ramen that have gained international acclaim. From the delicate precision of sushi, showcasing the freshest ingredients and meticulous craftsmanship, to the comforting warmth of a steaming bowl of ramen, each bite offers a glimpse into Japan's culinary mastery. Beyond these renowned staples, the country's cuisine boasts a wide array of regional specialties, street food delicacies, and innovative fusion dishes, making it a paradise for food enthusiasts eager to explore and indulge in its endless gastronomic delights. Whether dining in a Michelin-starred restaurant or savoring street-side treats, Japan's culinary offerings promise an unforgettable experience that delights the senses and leaves a lasting impression on every visitor.
-                  
-                 .
-                  
-                 </p>
+                <h2>Culinary Delights</h2>
+                <p>Japan's culinary scene is a tantalizing journey through diverse flavors and textures, featuring iconic dishes like sushi and ramen that have gained international acclaim. From the delicate precision of sushi to the comforting warmth of a steaming bowl of ramen, each bite offers a glimpse into Japan's culinary mastery.</p>
               </div>
             </div>
           </div>
@@ -81,117 +331,132 @@
     </div>
   </section>
   
-  
   <!-- Blog Posts Section -->
-  <section class="blog-posts">
+  <section class="blog-posts" id="blog-posts">
     <div class="container">
-      <h2>visit japanblog-post</h2>
+      <h2>Explore Japan's Famous Destinations</h2>
       <div class="row">
-        <section class="blog-posts">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="blog-post">
-                    <img src="blog1.jpg" alt="Blog Post 1" class="img-fluid">
-                    <div class="content">
-                      <h3>Traditional, serene, historic, cultural, picturesque.</h3>
-                      <p>Kyoto, a serene blend of tradition and beauty, boasts historic temples and picturesque landscapes that enchant visitors. From the iconic Fushimi Inari Shrine to the tranquil Arashiyama bamboo forest, it offers a captivating glimpse into Japan's rich cultural heritage.</p>
-                      <a href="https://en.wikipedia.org/wiki/Kyoto" class="btn btn-primary">Read More</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="blog-post">
-                    <img src="blog2.jpg" alt="Blog Post 2" class="img-fluid">
-                    <div class="content">
-                      
-                        <h3>The capital city of Japan </h3>
-                               
-                          
-                          
-                          </h3>
-                      <p>In Japan, innovation blooms with every stride,
-                        Reliable engineering, a trusted guide.
-                        Durable creations, through challenges they glide,
-                        Efficiency, where every resource is applied.
-                        In this island nation, excellence is certified..</p>
-                      <a href="https://en.wikipedia.org/wiki/Tokyo" class="btn btn-primary">Read More</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="blog-post">
-                    <img src="blog3.jpg" alt="Blog Post 3" class="img-fluid">
-                    <div class="content">
-                      <h3>Often referred to as the "Kitchen of Japan,"</h3>
-                      <p>In Osaka, street food reigns supreme, a flavorful delight,
-                        Dotonbori's neon-lit lanes sparkle at night.
-                        Historic landmarks stand tall, tales of yore,
-                        Amidst the vibrant atmosphere, legends soar.
-                        From Takoyaki to Okonomiyaki, tastes to savor,
-                        Entertainment districts pulse with energy, an urban flavor.
-                        In Osaka's dynamic streets, culture thrives, alive evermore..</p>
-                      <a href="https://en.wikipedia.org/wiki/Alice%27s_Adventures_in_Wonderland" class="btn btn-primary">Read More</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="blog-post">
-                    <img src="blog4.jpg" alt="Blog Post 2" class="img-fluid">
-                    <div class="content">
-                      <h3>Known for its friendly deer,</h3>
-                      <p>: Known for its friendly deer, Nara is home to some of Japan's oldest and most significant temples and shrines, including Todai-ji Temple and Kasuga Taisha Shrine. It's also renowned for its picturesque parks and gardens.</p>
-                      <a href="https://en.wikipedia.org/wiki/Nara_(city)" class="btn btn-primary">Read More</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="blog-post">
-                    <img src="sapporo.avif" alt="Blog Post 2" class="img-fluid">
-                    <div class="content">
-                      <h3> The capital of Hokkaido</h3>
-                      <p> Sapporo, famed for winter festivals, a frosty delight,
-                        Seafood delights, fresh from the ocean, a culinary height.
-                        Nightlife vibrant, pulsating beats in the air,
-                        Skiing and snowboarding, winter's thrilling affair.
-                        Summer beckons, hiking trails unfold,
-                        Mountains and forests, a sight to behold.
-                        In Sapporo's embrace, nature's wonders entwine,
-                        A city of contrasts, where adventures define.</p>
-                      <a href="https://en.wikipedia.org/wiki/Sapporo" class="btn btn-primary">Read More</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="blog-post">
-                    <img src="kobe.jpeg" alt="Blog Post 2" class="img-fluid">
-                    <div class="content">
-                      <h3> Nestled between the sea and mountains</h3>
-                      <p> Kobe offers a picturesque setting with landmarks like Kobe Port Tower, the historic Kitano-cho district with its Western-style houses, and the Arima Onsen, one of Japan's oldest hot spring resorts.</p>
-                      <a href="https://en.wikipedia.org/wiki/Kobe_Bryant" class="btn btn-primary">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="col-md-4">
+          <div class="blog-post">
+            <img src="blog1.jpg" alt="Kyoto" class="img-fluid">
+            <div class="content">
+              <h3>Kyoto - The Heart of Tradition</h3>
+              <p>Kyoto, a serene blend of tradition and beauty, boasts historic temples and picturesque landscapes that enchant visitors. From the iconic Fushimi Inari Shrine to the tranquil Arashiyama bamboo forest, it offers a captivating glimpse into Japan's rich cultural heritage.</p>
+              <a href="https://en.wikipedia.org/wiki/Kyoto" class="btn btn-primary">Read More</a>
             </div>
-          </section>
-          
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blog-post">
+            <img src="blog2.jpg" alt="Tokyo" class="img-fluid">
+            <div class="content">
+              <h3>Tokyo - The Capital City</h3>
+              <p>In Japan, innovation blooms with every stride, Reliable engineering, a trusted guide. Durable creations, through challenges they glide, Efficiency, where every resource is applied. In this island nation, excellence is certified.</p>
+              <a href="https://en.wikipedia.org/wiki/Tokyo" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blog-post">
+            <img src="blog3.jpg" alt="Osaka" class="img-fluid">
+            <div class="content">
+              <h3>Osaka - The Kitchen of Japan</h3>
+              <p>In Osaka, street food reigns supreme, a flavorful delight, Dotonbori's neon-lit lanes sparkle at night. Historic landmarks stand tall, tales of yore, Amidst the vibrant atmosphere, legends soar.</p>
+              <a href="https://en.wikipedia.org/wiki/Osaka" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blog-post">
+            <img src="blog4.jpg" alt="Nara" class="img-fluid">
+            <div class="content">
+              <h3>Nara - Home of Friendly Deer</h3>
+              <p>Known for its friendly deer, Nara is home to some of Japan's oldest and most significant temples and shrines, including Todai-ji Temple and Kasuga Taisha Shrine. It's also renowned for its picturesque parks and gardens.</p>
+              <a href="https://en.wikipedia.org/wiki/Nara_(city)" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blog-post">
+            <img src="sapporo.avif" alt="Sapporo" class="img-fluid">
+            <div class="content">
+              <h3>Sapporo - Hokkaido's Capital</h3>
+              <p>Sapporo, famed for winter festivals, a frosty delight, Seafood delights, fresh from the ocean, a culinary height. Nightlife vibrant, pulsating beats in the air, Skiing and snowboarding, winter's thrilling affair.</p>
+              <a href="https://en.wikipedia.org/wiki/Sapporo" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blog-post">
+            <img src="kobe.jpeg" alt="Kobe" class="img-fluid">
+            <div class="content">
+              <h3>Kobe - Between Sea and Mountains</h3>
+              <p>Kobe offers a picturesque setting with landmarks like Kobe Port Tower, the historic Kitano-cho district with its Western-style houses, and the Arima Onsen, one of Japan's oldest hot spring resorts.</p>
+              <a href="https://en.wikipedia.org/wiki/Kobe" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  
-  
- 
-
-  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>About Discover Japan</h5>
+          <p>Your ultimate guide to exploring the beauty, culture, and destinations of Japan. We provide insights into the best places to visit and experiences to enjoy.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Japan Places</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Travel Tips</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Information</h5>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Sakura Street, Tokyo, Japan</li>
+            <li><i class="fas fa-phone"></i> +81 3 1234 5678</li>
+            <li><i class="fas fa-envelope"></i> info@discoverjapan.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Discover Japan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
-
- 
-
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Simple animation for elements when they come into view
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        $('.blog-post').each(function() {
+          var position = $(this).offset().top;
+          var scrollPosition = $(window).scrollTop() + $(window).height();
+          
+          if (position < scrollPosition - 100) {
+            $(this).addClass('animated');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
