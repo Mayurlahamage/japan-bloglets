@@ -1,0 +1,250 @@
+/* Add custom styles here */
+/* Header styles */
+header {
+   background: rgb(224, 108, 235);
+  padding: 2%; 
+    /* background-image: url(backgrd2.jpg);
+    background-attachment: fixed; */
+  }
+  
+  header img {
+    height: 50px; /* Adjust height as needed */
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 1.5em;
+  }
+  
+  /* Carousel styles */
+  .carousel-item img {
+    width: 100%;
+    
+  
+  }
+  
+  /* Blog posts section styles */
+  .blog-posts h2 {
+    margin-bottom: 20px;
+  }
+  
+  .blog-posts .blog-post {
+    margin-bottom: 30px;
+  }
+  
+  /* Yoga poses section styles */
+  .yoga-poses h2 {
+    margin-bottom: 20px;
+  }
+  
+  .yoga-poses .yoga-pose {
+    margin-bottom: 30px;
+  }
+  
+  .yoga-poses .yoga-pose img {
+    width: 100%;
+  }
+  /* Add custom styles here */
+
+/* Yoga pose box styles */
+.yoga-pose {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 5px;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .yoga-pose img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .yoga-pose h3 {
+    margin-top: 15px;
+  }
+  
+  .yoga-pose p {
+    margin-bottom: 15px;
+    font-family: system-ui;
+  }
+  
+  /* Full description styles */
+  .full-description {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  
+  /* Premium membership section styles */
+  .premium-membership h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+  }
+  /* Add custom styles here */
+
+.carousel-item {
+    display: flex !important;
+  }
+  
+  .carousel-item .container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .carousel-item .col-md-4 {
+    flex: 1;
+  }
+  
+  .carousel-item .col-md-4 img {
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item .col-md-4 img.active {
+    transform: scale(1.2);
+    
+  }
+  
+  /* Blog post card styles */
+.blog-post {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .blog-post img {
+    width: 100%;
+  }
+  
+  .blog-post .content {
+    padding: 20px;
+  }
+  
+  .blog-post h3 {
+    margin-top: 0;
+  }
+  
+  .blog-post p {
+    margin-bottom: 20px;
+  }
+  #logo{
+    width: 10em;
+    height: 10em;
+    opacity: 500%;
+  }
+  
+  #aclogo{
+    height: 12em;
+    width: 12em;
+    opacity: 200%;
+
+  }
+  .col-md-4{
+    margin-top: 3em;
+  }
+  #s1{
+    height: 48em;
+    width: 100%;
+    background-color: rgb(248, 238, 238);
+    /* border: 2px solid black; */
+    margin: 0 auto;
+    margin-top: 3em;
+  }
+  #impyg{
+    height:8em;
+    width: 70%;
+    /* border: 2px solid black; */
+    margin: 0 auto;
+    text-align: center;
+  }
+  #impyg h1{
+    font-size: 50px;
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  #impyg div{
+    height: 10%;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1.2em;
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 23px;
+  }
+
+  #s2{
+    width: 52%;
+    height: 56%;
+    background-image: url(types1.jpg);
+    margin: 0 auto;
+    
+    /* margin-top: 90px; */
+  }
+  .col-md-4{
+    padding: 2em;
+
+  }
+  .col-md-4 p{
+    text-align: justify;
+  }
+  #logo1{
+    transition:3s;
+    animation-timing-function: ease-in-out;
+  }
+  #logo1:hover{
+    /* box-shadow: 0 6px 8px black; */
+    transform: scale(0.8);
+  }
+  #aclogo{
+    transition: 3s;
+  } 
+  #aclogo:hover{
+    transform: scale(0.8);
+  }
+  
+  #yogapose{
+    font-size: 6em;
+    font-family: Georgia, serif;
+  }
+ .sbutton{
+  margin-left: 41%;
+ }
+#sbut{
+  text-decoration: none;
+  color: white;
+  padding: 0.5em;
+}
+/* #sbut:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+} */
+.but{
+  display: inline-block;
+  border: 0.2px solid black;
+ background-color: blue;
+ border-radius: 0.5em;
+ transition: 1s;
+}
+.but:hover{
+box-shadow: 2px 5px 5px black;
+transform: scale(0.8);
+}
+.carousel-item active h1{
+  text-align:  center;
+}
